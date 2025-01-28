@@ -207,10 +207,9 @@ function animatePrivacyPolicyElements(elements) {
                     duration: 0.1,
                     scrollTrigger: {
                         trigger: pptriggerElement,
-                        start: "top 50%",
-                        end: "top 80%",
+                        start: "top 35%",
+                        end: "bottom 35%",
                         toggleActions: "play reset play reset",
-                        markers: true, // Enable debugging
                         onLeave: () =>
                             gsap.set(ppelement, {
                                 opacity: 0.35,
@@ -224,6 +223,15 @@ function animatePrivacyPolicyElements(elements) {
                     },
                 }
             );
+
+            // Ensure proper scroll behavior when the tab is clicked
+            pptriggerElement.addEventListener("click", () => {
+                gsap.to(window, {
+                    scrollTo: pptriggerElement, // Scroll to the trigger element
+                    duration: 0.5,
+                    onComplete: () => ScrollTrigger.refresh(), // Refresh ScrollTrigger after scrolling
+                });
+            });
         }
     });
 
