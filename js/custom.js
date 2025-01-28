@@ -477,40 +477,65 @@ function handleFormSubmission() {
 
 
   function toggleFloatingBlock(sectionClass, floatingClass, delay) {
-  if (floatingClass) {
-        gsap.fromTo(floatingClass, 
-            { y: 100, opacity: 0 }, 
-            {
-                y: 0, 
-                opacity: 1, 
-                duration: 0, 
-                delay: delay,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: sectionClass, 
-                    start: "top 120px",
-                    end: "bottom center",
-                    toggleActions: "play reverse play reverse"      
-                }
-            }
-        );
-    }
+		if (floatingClass) {
+			gsap.fromTo(floatingClass, 
+				{ y: 100, opacity: 0 }, 
+				{
+					y: 0, 
+					opacity: 1, 
+					duration: 0, 
+					delay: delay,
+					ease: "power2.out",
+					immediateRender: false, // Prevents animation from starting prematurely
+					scrollTrigger: {
+						trigger: sectionClass, 
+						start: "top 120px",
+						end: "bottom center",
+						toggleActions: "play reverse play reverse",
+						preventOverlaps: true, // Prevents overlapping triggers
+					}
+				}
+			);
+		}
+	}
 
-  }
   toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
   function syncSearchFields(class1, class2) {
-    $(document).ready(function() {
-      $(class1).on('input', function() {
-        var value = $(this).val();
-        $(class2).val(value);
-      });
-  
-      $(class2).on('input', function() {
-        var value = $(this).val();
-        $(class1).val(value);
-      });
-    });
-  }
+	  $(document).ready(function () {
+		// Synchronize fields on input
+		$(class1).on('input', function () {
+		  clearTimeout(typingTimer); // Clear previous debounce timer
+		  typingTimer = setTimeout(() => {
+			const value = $(this).val();
+			$(class2).val(value);
+
+			// Check if no results and toggle the "no-result" block
+			if ($('.collection-list-3').css('display') === 'none') {
+			  console.log('no result');
+			  $(".no-result").css('display', 'block');
+			} else {
+			  $(".no-result").css('display', 'none');
+			}
+		  }, delay);
+		});
+
+		$(class2).on('input', function () {
+		  clearTimeout(typingTimer); // Clear previous debounce timer
+		  typingTimer = setTimeout(() => {
+			const value = $(this).val();
+			$(class1).val(value);
+
+			// Check if no results and toggle the "no-result" block
+			if ($('.collection-list-3').css('display') === 'none') {
+			  console.log('no result');
+			  $(".no-result").css('display', 'block');
+			} else {
+			  $(".no-result").css('display', 'none');
+			}
+		  }, delay);
+		});
+	  });
+	}
   
 
 let typingTimer;
