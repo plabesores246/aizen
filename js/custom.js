@@ -228,9 +228,8 @@ function animatePrivacyPolicyElements(elements) {
     });
 
     // Refresh ScrollTrigger after initialization
-    ScrollTrigger.refresh(); 
+    ScrollTrigger.refresh();
 }
-
 
 const privacyPolicyElements = [
     { selector: "#TOC-M1", trigger: "#title1" },
