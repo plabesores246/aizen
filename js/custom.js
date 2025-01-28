@@ -213,7 +213,7 @@ function animatePrivacyPolicyElements(elements) {
                         start: "top 10%",
                         end: "bottom 10%", 
                         toggleActions: "play reset play reset", 
-						markers: true, // Enable debugging
+						markers: false, // Enable debugging
                         onLeave: () => gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" }), 
                         onLeaveBack: () => gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" })
                     }
