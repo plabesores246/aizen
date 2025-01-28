@@ -164,6 +164,7 @@ $(document).ready(function() {
                                 trigger: triggerElement,
                                 start: "top 65%",
                                 end: "bottom 65%",
+								markers: false, // Enable debugging
                                 toggleActions: "play reset play reset",
                                 onLeave: () => gsap.set(element, { opacity: 0.5 }),
                                 onLeaveBack: () => gsap.set(element, { opacity: 0.5 })
@@ -504,7 +505,7 @@ function toggleFloatingBlock(sectionClass, floatingClass, delay) {
   }
 }
 
-//toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
+toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
 
 function syncSearchFields(class1, class2) {
   $(document).ready(function () {
