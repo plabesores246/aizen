@@ -504,7 +504,7 @@ function toggleFloatingBlock(sectionClass, floatingClass, delay) {
   }
 }
 
-toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
+//toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
 
 function syncSearchFields(class1, class2) {
   $(document).ready(function () {
