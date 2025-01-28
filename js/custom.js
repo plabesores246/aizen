@@ -211,7 +211,7 @@ function animatePrivacyPolicyElements(elements) {
                     scrollTrigger: {
                         trigger: pptriggerElement, 
                         start: "top 10%",
-                        end: "bottom 35%", 
+                        end: "bottom 10%", 
                         toggleActions: "play reset play reset", 
 						markers: true, // Enable debugging
                         onLeave: () => gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" }), 
