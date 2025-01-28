@@ -231,7 +231,18 @@ const privacyPolicyElements = [
     { selector: "#TOC-M3", trigger: "#title3" },
     { selector: "#TOC-M4", trigger: "#title4" },
     { selector: "#TOC-M5", trigger: "#title5" },
-    { selector: "#TOC-M6", trigger: "#title6" }
+    { selector: "#TOC-M6", trigger: "#title6" },
+	{ selector: "#TOC-M7", trigger: "#title7" },
+	{ selector: "#TOC-M8", trigger: "#title8" },
+	{ selector: "#TOC-M9", trigger: "#title9" },
+	{ selector: "#TOC-M10", trigger: "#title10" },
+	{ selector: "#TOC-M11", trigger: "#title11" },
+	{ selector: "#TOC-M12", trigger: "#title12" },
+	{ selector: "#TOC-M13", trigger: "#title13" },
+	{ selector: "#TOC-M14", trigger: "#title14" },
+	{ selector: "#TOC-M15", trigger: "#title15" },
+	{ selector: "#TOC-M16", trigger: "#title16" },
+	{ selector: "#TOC-M17", trigger: "#title17" },
 ];
 
 // ANIMATION
