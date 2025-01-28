@@ -242,7 +242,7 @@ const privacyPolicyElements = [
 	{ selector: "#TOC-M14", trigger: "#title14" },
 	{ selector: "#TOC-M15", trigger: "#title15" },
 	{ selector: "#TOC-M16", trigger: "#title16" },
-	{ selector: "#TOC-M17", trigger: "#title17" },
+	{ selector: "#TOC-M17", trigger: "#title17" }
 ];
 
 // ANIMATION
