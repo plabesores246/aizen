@@ -207,9 +207,10 @@ function animatePrivacyPolicyElements(elements) {
                     duration: 0.1,
                     scrollTrigger: {
                         trigger: pptriggerElement,
-                        start: "top 35%",
-                        end: "bottom 35%",
+                        start: "top 50%",
+                        end: "top 80%",
                         toggleActions: "play reset play reset",
+                        markers: true, // Enable debugging
                         onLeave: () =>
                             gsap.set(ppelement, {
                                 opacity: 0.35,
@@ -220,26 +221,13 @@ function animatePrivacyPolicyElements(elements) {
                                 opacity: 0.35,
                                 color: "rgba(21, 21, 21)",
                             }),
-                        onRefresh: () => {
-                            // Recalculate the scroll positions dynamically
-                            gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" });
-                        },
                     },
                 }
             );
-
-            // Scroll and refresh when a tab is clicked
-            pptriggerElement.addEventListener("click", () => {
-                gsap.to(window, {
-                    scrollTo: pptriggerElement, // Smooth scroll to the trigger
-                    duration: 0.5,
-                    onComplete: () => ScrollTrigger.refresh(), // Refresh after scrolling
-                });
-            });
         }
     });
 
-    // Refresh ScrollTrigger after all elements are initialized
+    // Refresh ScrollTrigger after initialization
     ScrollTrigger.refresh();
 }
 
