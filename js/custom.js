@@ -210,7 +210,7 @@ function animatePrivacyPolicyElements(elements) {
                     duration: 0.1, 
                     scrollTrigger: {
                         trigger: pptriggerElement, 
-                        start: "top 35%",
+                        start: "top 10%",
                         end: "bottom 35%", 
                         toggleActions: "play reset play reset", 
 						markers: true, // Enable debugging
