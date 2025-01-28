@@ -503,7 +503,7 @@ function toggleFloatingBlock(sectionClass, floatingClass, delay) {
   }
 }
 
-//toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
+toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
 
 function syncSearchFields(class1, class2) {
   $(document).ready(function () {
@@ -583,7 +583,7 @@ $('.header-nav-dropdown').on('click', function () {
 
 
 
-//syncSearchFields('.search-field', '.search-field-floating-open');
+syncSearchFields('.search-field', '.search-field-floating-open');
 handleFormSubmission();
 copyCurrentLink('.copy-link-button');
 animateElementWithScrollTrigger("._3-col-grid", "._3-col-grid", .3);
@@ -601,8 +601,8 @@ animateElementWithScrollTrigger(".cci-block", ".cci-block", .3);
 animateElementWithScrollTrigger(".cci-cards", ".cci-cards", .3);
 animateElementWithScrollTrigger(".testimonials-block", ".testimonials-block", .3);
 animateElementWithScrollTrigger(".testimonials-cards-block", ".testimonials-cards-block", .3);
-//animateElementWithScrollTrigger(".resources-content", ".resources-content", .3);
-//animateElementWithScrollTrigger(".resources-grid", ".resources-grid", .3);
+animateElementWithScrollTrigger(".resources-content", ".resources-content", .3);
+animateElementWithScrollTrigger(".resources-grid", ".resources-grid", .3);
 animateElementWithScrollTrigger(".global-cta-block", ".global-cta-block", .3);
 animateElementWithScrollTrigger(".diagram-with-tabs-content-block", ".diagram-with-tabs-content-block", .3);
 animateElementWithScrollTrigger(".diagram-with-tabs-content-tabs", ".diagram-with-tabs-content-tabs", .3);
@@ -623,7 +623,7 @@ animateElementWithScrollTrigger("._3-up-card-grid-section-grid", "._3-up-card-gr
 animateElementWithScrollTrigger(".featured-resource-title-block", ".featured-resource-title-block", .3);
 animateElementWithScrollTrigger(".featured-resource-body", ".featured-resource-body", .3);
 
-animateElementWithScrollTrigger(".w-dyn-list", ".w-dyn-list", .3);
+//animateElementWithScrollTrigger(".w-dyn-list", ".w-dyn-list", .3);
 animateElementWithScrollTrigger(".about-us-hero-container", ".about-us-hero-container", .3);
 animateElementWithScrollTrigger(".investor-logos-container", ".investor-logos-container", .3);
 animateElementWithScrollTrigger("._3-up-card-grid-section-content", "._3-up-card-grid-section-content", .3);
