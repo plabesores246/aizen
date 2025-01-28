@@ -220,22 +220,26 @@ function animatePrivacyPolicyElements(elements) {
                                 opacity: 0.35,
                                 color: "rgba(21, 21, 21)",
                             }),
+                        onRefresh: () => {
+                            // Recalculate the scroll positions dynamically
+                            gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" });
+                        },
                     },
                 }
             );
 
-            // Ensure proper scroll behavior when the tab is clicked
+            // Scroll and refresh when a tab is clicked
             pptriggerElement.addEventListener("click", () => {
                 gsap.to(window, {
-                    scrollTo: pptriggerElement, // Scroll to the trigger element
+                    scrollTo: pptriggerElement, // Smooth scroll to the trigger
                     duration: 0.5,
-                    onComplete: () => ScrollTrigger.refresh(), // Refresh ScrollTrigger after scrolling
+                    onComplete: () => ScrollTrigger.refresh(), // Refresh after scrolling
                 });
             });
         }
     });
 
-    // Refresh ScrollTrigger after initialization
+    // Refresh ScrollTrigger after all elements are initialized
     ScrollTrigger.refresh();
 }
 
