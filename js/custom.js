@@ -219,7 +219,7 @@ function animatePrivacyPolicyElements(elements) {
                 }
             );
         } else {
-            // console.warn(`Privacy Policy Element or trigger not found: ${selector} / ${trigger}`);
+            console.warn(`Privacy Policy Element or trigger not found: ${selector} / ${trigger}`);
         }
     });
 }
@@ -324,10 +324,6 @@ function initAnimations() {
 if (window.matchMedia("(min-width: 992px)").matches) {
     DTCTTabloopDesktop();
 }
-
-animateElementsWithScroll(elements);
-animatePrivacyPolicyElements(privacyPolicyElements);
-initAnimations();
 
 //   Reveal on scroll animation
 function initRevealOnScroll() {
