@@ -503,7 +503,7 @@ function toggleFloatingBlock(sectionClass, floatingClass, delay) {
   }
 }
 
-toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
+//toggleFloatingBlock(".collection-list-3", ".search-block-floating", 0);
 
 function syncSearchFields(class1, class2) {
   $(document).ready(function () {
@@ -583,7 +583,7 @@ $('.header-nav-dropdown').on('click', function () {
 
 
 
-syncSearchFields('.search-field', '.search-field-floating-open');
+//syncSearchFields('.search-field', '.search-field-floating-open');
 handleFormSubmission();
 copyCurrentLink('.copy-link-button');
 animateElementWithScrollTrigger("._3-col-grid", "._3-col-grid", .3);
