@@ -122,6 +122,9 @@
 }
 
 @media (max-width: 767px) {
+	.mobile-hidden {
+		display:none;
+	}
     .nav-scroll .nav-content img{
         width: 60px;
     }
