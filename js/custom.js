@@ -228,7 +228,7 @@ function animatePrivacyPolicyElements(elements) {
     });
 
     // Refresh ScrollTrigger after initialization
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(); 
 }
 
 
