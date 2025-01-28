@@ -195,33 +195,40 @@ function animatePrivacyPolicyElements(elements) {
         const ppelement = document.querySelector(selector);
         const pptriggerElement = document.querySelector(trigger);
 
-        // Check if both the element and its trigger exist
         if (ppelement && pptriggerElement) {
             gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" });
 
-            gsap.fromTo(ppelement, 
-                { 
-                    color: "rgba(21, 21, 21)",
-                    opacity: 0.35
-                }, 
-                { 
-                    color: "var(--navy)", 
+            gsap.fromTo(
+                ppelement,
+                { color: "rgba(21, 21, 21)", opacity: 0.35 },
+                {
+                    color: "var(--navy)",
                     opacity: 1,
-                    duration: 0.1, 
+                    duration: 0.1,
                     scrollTrigger: {
-                        trigger: pptriggerElement, 
-                        start: "top 35%",
-                        end: "bottom 35%", 
-                        toggleActions: "play reset play reset", 
-                        onLeave: () => gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" }), 
-                        onLeaveBack: () => gsap.set(ppelement, { opacity: 0.35, color: "rgba(21, 21, 21)" })
-                    }
+                        trigger: pptriggerElement,
+                        start: "top 50%",
+                        end: "top 80%",
+                        toggleActions: "play reset play reset",
+                        markers: true, // Enable debugging
+                        onLeave: () =>
+                            gsap.set(ppelement, {
+                                opacity: 0.35,
+                                color: "rgba(21, 21, 21)",
+                            }),
+                        onLeaveBack: () =>
+                            gsap.set(ppelement, {
+                                opacity: 0.35,
+                                color: "rgba(21, 21, 21)",
+                            }),
+                    },
                 }
             );
-        } else {
-            console.warn(`Privacy Policy Element or trigger not found: ${selector} / ${trigger}`);
         }
     });
+
+    // Refresh ScrollTrigger after initialization
+    ScrollTrigger.refresh();
 }
 
 
