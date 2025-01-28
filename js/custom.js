@@ -1,11 +1,11 @@
-$(window).on('scroll', function() {
+/** $(window).on('scroll', function() {
     if ($(window).scrollTop() > 0) {
       $('.navbar').removeClass('nav-top').addClass('nav-scroll');
     } else {
       $('.navbar').removeClass('nav-scroll').addClass('nav-top');
     }
   });
-
+*/
 $(document).ready(function() {
     
     $('.lc-owl-carousel').owlCarousel({
@@ -623,7 +623,7 @@ animateElementWithScrollTrigger("._3-up-card-grid-section-grid", "._3-up-card-gr
 animateElementWithScrollTrigger(".featured-resource-title-block", ".featured-resource-title-block", .3);
 animateElementWithScrollTrigger(".featured-resource-body", ".featured-resource-body", .3);
 
-//animateElementWithScrollTrigger(".w-dyn-list", ".w-dyn-list", .3);
+animateElementWithScrollTrigger(".w-dyn-list", ".w-dyn-list", .3);
 animateElementWithScrollTrigger(".about-us-hero-container", ".about-us-hero-container", .3);
 animateElementWithScrollTrigger(".investor-logos-container", ".investor-logos-container", .3);
 animateElementWithScrollTrigger("._3-up-card-grid-section-content", "._3-up-card-grid-section-content", .3);
