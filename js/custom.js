@@ -492,7 +492,7 @@ function toggleFloatingBlock(sectionClass, floatingClass, delay) {
         immediateRender: false, // Prevents auto-scrolling when initialized
         scrollTrigger: {
           trigger: sectionClass,
-          start: "top 140px",
+          start: "top 200px",
           end: "bottom center",
           toggleActions: "play reverse play reverse",
           preventOverlaps: true, // Prevent overlapping animations
