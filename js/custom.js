@@ -123,19 +123,19 @@ $(document).ready(function() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    function animateElementsWithScroll(elements) {
-        elements.forEach(({ selector, trigger }) => {
-            const element = document.querySelector(selector);
-            const triggerElement = document.querySelector(trigger);
-    
-            // Check if both the element and its trigger exist
-            if (element && triggerElement) {
-                const overlineElement = element.querySelector(".overline");
-                gsap.set(element, { opacity: 0.5 });
-    
-                // Animate the main element
-                if (element){
-                gsap.fromTo(element,
+function animateElementsWithScroll(elements) {
+    elements.forEach(({ selector, trigger }) => {
+        const element = document.querySelector(selector);
+        const triggerElement = document.querySelector(trigger);
+
+        if (element && triggerElement) {
+            const overlineElement = element.querySelector(".overline");
+            gsap.set(element, { opacity: 0.5 });
+
+            // Animate the main element
+            if (element) {
+                gsap.fromTo(
+                    element,
                     { opacity: 0.5 },
                     {
                         opacity: 1,
@@ -146,39 +146,37 @@ $(document).ready(function() {
                             start: "top 65%",
                             end: "bottom 65%",
                             toggleActions: "play reset play reset",
+                            immediateRender: false, // Prevent auto-scroll
+                            once: true, // Trigger only once
                             onLeave: () => gsap.set(element, { opacity: 0.5 }),
-                            onLeaveBack: () => gsap.set(element, { opacity: 0.5 })
-                        }
+                            onLeaveBack: () => gsap.set(element, { opacity: 0.5 }),
+                        },
                     }
                 );
             }
-    
-                // Animate the overline element if it exists
-                if (overlineElement){
-                if (overlineElement) {
-                    gsap.to(overlineElement,
-                        {
-                            display: "block",
-                            duration: 0.1,
-                            scrollTrigger: {
-                                trigger: triggerElement,
-                                start: "top 65%",
-                                end: "bottom 65%",
-								markers: false, // Enable debugging
-                                toggleActions: "play reset play reset",
-                                onLeave: () => gsap.set(element, { opacity: 0.5 }),
-                                onLeaveBack: () => gsap.set(element, { opacity: 0.5 })
-                            }
-                        }
-                    );
-                }
-    
-            } else {
-                // console.warn(`Element or trigger not found: ${selector} / ${trigger}`);
+
+            // Animate the overline element if it exists
+            if (overlineElement) {
+                gsap.to(overlineElement, {
+                    display: "block",
+                    duration: 0.1,
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        start: "top 65%",
+                        end: "bottom 65%",
+                        toggleActions: "play reset play reset",
+                        immediateRender: false, // Prevent auto-scroll
+                        once: true, // Trigger only once
+                        markers: false, // Enable debugging if needed
+                        onLeave: () => gsap.set(element, { opacity: 0.5 }),
+                        onLeaveBack: () => gsap.set(element, { opacity: 0.5 }),
+                    },
+                });
             }
         }
-        });
-    }
+    });
+}
+
     
     // Example usage
     const elements = [
